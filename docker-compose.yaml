@@ -1,0 +1,16 @@
+vote:
+  build: ./vote
+  command: python app.py
+  links:
+    - redis:redis
+  ports:
+    - 80
+
+redis:
+  image: redis:alpine
+
+worker:
+  build: ./worker
+  dockerfile: Dockerfile
+  links:
+    - redis:redis
