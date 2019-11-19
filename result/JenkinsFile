@@ -9,7 +9,7 @@ pipeline {
   stages{
       stage(build){
         when{
-            branch 'master'
+            branch 'featureresult'
             changeset "**/result/**"
           }
 
@@ -22,7 +22,7 @@ pipeline {
       }
       stage(test){
         when{
-          branch 'master'
+          branch 'featureresult'
           changeset "**/result/**"
         }
         steps{
