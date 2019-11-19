@@ -9,6 +9,7 @@ pipeline {
   stages{
       stage(build){
         when{
+            branch 'master'
             changeset "**/result/**"
           }
 
@@ -21,6 +22,7 @@ pipeline {
       }
       stage(test){
         when{
+          branch 'master'
           changeset "**/result/**"
         }
         steps{
